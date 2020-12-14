@@ -27,7 +27,7 @@ public class MovieController {
         return movieService.saveMovieToDB(movie);
     }
 
-    @GetMapping("/getMovieById/{id}")
+    @GetMapping("/getMovieById/{movieId}")
     public Movie fetchMovieById(@PathVariable int movieId) {
 
         return movieService.fetchMovieById(movieId).get();
