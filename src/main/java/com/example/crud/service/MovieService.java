@@ -30,4 +30,16 @@ public class MovieService {
 
     }
 
+    public String deleteMovieById(int movieId) {
+        String result;
+        try {
+            movieRepo.deleteById(movieId);
+            result = "Movie successfully deleted!";
+
+        } catch (Exception e) {
+            result = "Movie with the given id is not in the list.";
+        }
+        return result;
+    }
+
 }
