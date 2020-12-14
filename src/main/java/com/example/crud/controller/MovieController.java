@@ -28,10 +28,10 @@ public class MovieController {
     }
 
     @GetMapping("/getMovieById/{id}")
-    public Movie fetchMovieById(@PathVariable int id) {
+    public Movie fetchMovieById(@PathVariable int movieId) {
 
+        return movieService.fetchMovieById(movieId).get();
 
-        return null;
     }
 
 }
