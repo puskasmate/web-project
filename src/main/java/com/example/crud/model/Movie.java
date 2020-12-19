@@ -1,18 +1,25 @@
 package com.example.crud.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "movieTable")
 public class Movie {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movieId;
+    @Column(nullable = false)
     private String movieName;
     private String movieTheme;
-    private Long movieRating;
+    private Double movieRating;
 
 
     public Movie() {
 
     }
 
-    public Movie(int movieId, String movieName, String movieTheme, Long movieRating) {
+    public Movie(int movieId, String movieName, String movieTheme, Double movieRating) {
         this.movieId = movieId;
         this.movieName = movieName;
         this.movieTheme = movieTheme;
@@ -44,11 +51,11 @@ public class Movie {
         this.movieTheme = movieTheme;
     }
 
-    public Long getMovieRating() {
+    public Double getMovieRating() {
         return movieRating;
     }
 
-    public void setMovieRating(Long movieRating) {
+    public void setMovieRating(Double movieRating) {
         this.movieRating = movieRating;
     }
 }
