@@ -47,9 +47,11 @@ public class MovieService {
         try {
             movieRepo.deleteById(movieId);
             result = "Movie successfully deleted!";
+            System.out.println(result);
 
         } catch (Exception e) {
             result = "Movie with the given id is not in the list.";
+            System.out.println(result);
         }
         return result;
     }
